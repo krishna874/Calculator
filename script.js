@@ -1,6 +1,8 @@
- function onFocusInput(object){
+ 
+
+function onFocusInput(object){
     document.getElementById("A").focused=false;
-    //document.getElementById("B").focused=false;
+    document.getElementById("B").focused=false;
     object.focused = true;
 }
 
@@ -13,37 +15,43 @@ function addToDisplay(c) {
      
     
 }
-function operation(operator) {
+var operand;
+function setOperator(operator) {
+    operand = operator;
+    document.cal.operator.value = operator;
+    
+    
+}
+function operation(operand) {
+    operand = document.cal.operator.value;
     
     var a = Number(document.getElementById("A").value);
     var b = Number(document.getElementById("B").value);
-
-    if (operator == '+') {
+    var result;
+    if (operand == '+') {
         
-        result = a + b;
+         result = a + b;
     
-    } else if (operator == '-') {
+    } else if (operand == '-') {
         
         result = a - b;
         
-    } else if (operator == '×') {
+    } else if (operand == '×') {
         
         result = a * b;
         
-    } else if (operator == '÷') {
+    } else if(operand == '÷') {
         
         result = a / b;
         
     } else {
-        document.cal.result.value = result;
-        
-    } 
-    if(operator == "=") {
-        document.cal.equal.value = operator;
-    
-    } else{
-   document.cal.operator.value = operator;
+        alert("enter correct operator");
     }
+    document.getElementById("equal").value = "=";
+document.getElementById("result").value = result;
+ 
+    
+    
 }
 function clearFields(field) {
     if(field == 'A') {
