@@ -1,28 +1,27 @@
  
 
-function onFocusInput(object){
-    document.getElementById("A").focused=false;
-    document.getElementById("B").focused=false;
+function onFocusInput(object) {
+    document.getElementById("A").focused = false;
+    //document.getElementById("B").focused = false;
     object.focused = true;
 }
 
 function addToDisplay(c) {
      
-      if(document.getElementById("A").focused)
-    document.cal.A.value += c;
-    else 
-    document.cal.B.value += c;
-     
-    
+    if (document.getElementById("A").focused) {
+        document.cal.A.value += c;
+    } else {
+        document.cal.B.value += c;
+    }
 }
 var operand;
 function setOperator(operator) {
     operand = operator;
     document.cal.operator.value = operator;
-    
+onFocusInput(document.getElementById("B"));
     
 }
-function operation(operand) {
+function operation() {
     operand = document.cal.operator.value;
     
     var a = Number(document.getElementById("A").value);
@@ -40,7 +39,7 @@ function operation(operand) {
         
         result = a * b;
         
-    } else if(operand == '÷') {
+    } else if (operand == '÷') {
         
         result = a / b;
         
@@ -48,19 +47,28 @@ function operation(operand) {
         alert("enter correct operator");
     }
     document.getElementById("equal").value = "=";
-document.getElementById("result").value = result;
+    document.getElementById("result").value = result;
  
     
     
 }
 function clearFields(field) {
-    if(field == 'A') {
+    if (field == 'A') {
         document.cal.A.value = "";
+        onFocusInput(document.getElementById("A"));
     
     } else if (field == 'B') {
         document.cal.B.value = "";
-    } else  {
+        onFocusInput(document.getElementById("B"));
+    } else if (field == 'result'){
         document.cal.result.value = "";
+    } else {
+        document.cal.A.value = "";
+        document.cal.B.value = "";
+        document.cal.result.value = "";
+        document.cal.operator.value = "";
+        document.getElementById("equal").value = "";
+        onFocusInput(document.getElementById("A"));
     }
     
 }

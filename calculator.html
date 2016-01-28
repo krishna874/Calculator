@@ -7,41 +7,41 @@
     <body>
         <form name="cal">
         <table align="center">
-            <tr><th><h1>  Calculator</th></h1></tr>
+            <tr><th><h1>  Calculator</h1></th></tr>
             <tr >
                 <th><pre><h2>A             B             Result</h2></pre></th>
             </tr>
             <tr>
                 <td>
-                    <input type="text" id="A" name="A" value="" onfocus="onFocusInput(this)" autofocus>
-                    <input type="text" id="operator" name="operator" value="" readonly="readonly">
-                    <input type="text" id="B"  name="B" value="" onfocus='onFocusInput(this)' >
-                    <input type="text" id="equal" name="equal" value="" readonly="readonly">
-                    <input type="text" id="result" name="result" value="" readonly="readonly">
+                    <input type="text" id="A" name="A" value="" onfocus="onFocusInput(this)" autofocus readonly="readonly"/>
+                    <input type="text" id="operator" name="operator" value="" readonly="readonly" />
+                    <input type="text" id="B"  name="B" value="" onfocus='onFocusInput(this)' readonly="readonly"/>
+                    <input type="text" id="equal" name="equal" value="" readonly="readonly"/>
+                    <input type="text" id="result" name="result" value="" readonly="readonly"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="Button" value="Clear A"  onclick="clearFields('A')">
-                    <input type="Button" value="Clear B" onclick="clearFields('B')">
-                    <input type="Button" value="Clear Result" onclick="clearFields('result')">
-                    <input type="reset" value="Clear" onclick="clearFields('all')">
+                    <input type="Button" value="Clear A"  onclick="clearFields('A')"/>
+                    <input type="Button" value="Clear B" onclick="clearFields('B')"/>
+                    <input type="Button" value="Clear Result" onclick="clearFields('result')"/>
+                    <input type="Button" value="Clear" onclick="clearFields('all')"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                   <input  class="num"  type="Button" value="7" onclick="addToDisplay('7')"  >
-                   <input class="num" type="Button" value="8" onclick="addToDisplay('8')" >
-                   <input class="num" type="Button" value="9" onclick="addToDisplay('9')">
-                   <input   type="Button" value="+" onclick="setOperator('+')">
+                   <input  class="num"  type="Button" value="7" onclick="addToDisplay('7')" / >
+                   <input class="num" type="Button" value="8" onclick="addToDisplay('8')" />
+                   <input class="num" type="Button" value="9" onclick="addToDisplay('9')"/>
+                   <input   type="Button" value="+" onclick="setOperator('+')"/>
                 </td>
             </tr>
              <tr>
                 <td>
-                    <input class="num" type="Button" value="4" onclick="addToDisplay('4')">
-                    <input  class="num" type="Button" value="5" onclick="addToDisplay('5')">
-                    <input  class="num"type="Button" value="6" onclick="addToDisplay('6')">
-                    <input  type="Button" value="-" onclick="setOperator('-')">
+                    <input class="num" type="Button" value="4" onclick="addToDisplay('4')"/>
+                    <input  class="num" type="Button" value="5" onclick="addToDisplay('5')"/>
+                    <input  class="num"type="Button" value="6" onclick="addToDisplay('6')"/>
+                    <input  type="Button" value="-" onclick="setOperator('-')"/>
                  </td>
             </tr>
              <tr>
@@ -49,18 +49,17 @@
                     <input class="num" type="Button" value="1" onclick="addToDisplay('1')">
                     <input class="num" type="Button" value="2" onclick="addToDisplay('2')">
                     <input  class="num"type="Button" value="3" onclick="addToDisplay('3')">
-                    <input  type="Button" value="&#215;" onclick="setOperator('×')">
+                    <input  type="Button" value="&#215;" onclick="setOperator('&#215;')">
                  </td>
             </tr>
              <tr>
                  <td>
-                     <input class="num" type="Button" value="0" onclick="addToDisplay('0')">
-                     <input class="num" type="Button" value="." onclick="addToDisplay('.')">
-                     <input type="Button" value="=" onclick="operation()">
-                     <input type="Button" value="&#247;"onclick="setOperator('÷')">
+                     <input class="num" type="Button" value="0" onclick="addToDisplay('0')"/>
+                     <input class="num" type="Button" value="." onclick="addToDisplay('.')"/>
+                     <input type="Button" value="=" onclick="operation()"/>
+                     <input type="Button" value="÷"onclick="setOperator(this.value)"/>
                  </td>
             </tr>
-        
         </table>
         </form>
         <script src="script.js"></script>
